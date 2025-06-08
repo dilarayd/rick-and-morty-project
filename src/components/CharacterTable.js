@@ -80,9 +80,7 @@ const CharacterTable = ({
   }
 
   return (
-    // Tabloyu çevreleyen ana kapsayıcı
     <Paper sx={{ width: '100%', height: 'calc(100vh - 250px)', display: 'flex', flexDirection: 'column', mb: 4 }}>
-      {/* Tablo içeriğini tutan kapsayıcı */}
       <TableContainer component={Paper} sx={{ 
         flex: 1, 
         display: 'flex', 
@@ -100,7 +98,7 @@ const CharacterTable = ({
           }
         }
       }}>
-        <Table stickyHeader> {/* Sabit başlıklı tablo */}
+        <Table stickyHeader> 
           <TableHead>
             <TableRow>
               <TableCell width="80px">Image</TableCell>
@@ -128,10 +126,8 @@ const CharacterTable = ({
             </TableRow>
           </TableHead>
           <TableBody>
-          {/* Karakterleri tablo satırları olarak listeler */}
             {characters.map((character) => (
               <React.Fragment key={character.id}>
-              {/* Karakter satırı, tıklanabilir */}
                 <TableRow
                   hover
                   onClick={() => onCharacterSelect(character)}
@@ -166,7 +162,6 @@ const CharacterTable = ({
                   <TableCell>{character.origin.name}</TableCell>
                   <TableCell>{character.location.name}</TableCell>
                 </TableRow>
-                {/* Seçili karakter için detay görünümünü gösterir */}
                 {selectedCharacter?.id === character.id && (
                   <TableRow>
                     <TableCell colSpan={7} sx={{ p: 0, borderBottom: 'none', backgroundColor: 'inherit' }} ref={detailRef}>
